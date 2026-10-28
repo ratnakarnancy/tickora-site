@@ -1,0 +1,124 @@
+:root {
+  --bg: #f6f4ef;
+  --surface: #ffffff;
+  --text: #1d2321;
+  --muted: #5b6662;
+  --accent: #1f6f6b;
+  --accent-soft: #e2efed;
+  --border: #e3e0d8;
+  --todo-bg: #fff3c4;
+  --todo-text: #5c4500;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1514;
+    --surface: #182120;
+    --text: #e8ece9;
+    --muted: #a3afab;
+    --accent: #6cc4b5;
+    --accent-soft: #1f3330;
+    --border: #2a3533;
+    --todo-bg: #4a3b00;
+    --todo-text: #ffe38a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+header.site {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+header.site .inner, main, footer.site {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header.site .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand img { width: 36px; height: 36px; border-radius: 9px; }
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: 500;
+}
+
+nav a:first-child { margin-left: 0; }
+nav a[aria-current="page"], nav a:hover { color: var(--accent); }
+
+main { padding-top: 32px; padding-bottom: 48px; }
+
+h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 8px; }
+h2 { font-size: 1.3rem; margin: 36px 0 8px; }
+h3 { font-size: 1.05rem; margin: 24px 0 4px; }
+p, li { color: var(--text); }
+.lede { color: var(--muted); font-size: 1.1rem; margin-top: 0; }
+a { color: var(--accent); }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin: 16px 0;
+}
+
+.summary { background: var(--accent-soft); border-color: transparent; }
+.summary ul { margin: 0; padding-left: 20px; }
+
+mark.todo {
+  background: var(--todo-bg);
+  color: var(--todo-text);
+  padding: 1px 6px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+
+.table-wrap { overflow-x: auto; }
+
+footer.site {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  padding-bottom: 40px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.6rem; }
+  nav a { margin-left: 12px; }
+}
